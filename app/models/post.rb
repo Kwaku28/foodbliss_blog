@@ -18,7 +18,7 @@ class Post < ApplicationRecord
 
   # Updates the comments counter for a post
   def update_comments_counter
-    self.update(comments_counter: self.comments.count)
+    update(comments_counter: comments.count)
   end
 
   # Updates the likes counter for a post
