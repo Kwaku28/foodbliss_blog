@@ -88,7 +88,7 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:rica213/fantastic-happiness.git
+  git clone https://github.com/Kwaku28/foodbliss_blog.git
 ```
 
 ## Install
@@ -157,7 +157,7 @@ Example command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Kwaku28/foodbliss_blog/issues).
 
 <!-- SUPPORT -->
 
