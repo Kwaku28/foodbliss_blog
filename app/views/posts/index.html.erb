@@ -1,1 +1,19 @@
-<h2>Here is a list of all posts made by the User</h2>
+<%= render 'shared/user_profile', user: @user %>
+
+<div class="user_profile">
+  <% @posts.each do |post| %>
+    <div class="posts">
+      <div class="user_post">
+        <a href="/users/<%= post.author_id %>/posts/<%= post.id %>"><b><%= post.title %></b></a>
+        <p><%= post.text %></p>
+        <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+      </div>
+      <ul class="comments">
+        <% Post.recent_comments(post).each do |comment|%>
+          <li><b><%= comment.author.name %>:</b> <%= comment.text %></li><br/>
+        <%end%>
+      </ul>
+      </div>
+  <%end%>
+  <button type="button">Pagnation</button>
+</div>
