@@ -1,1 +1,23 @@
-<h2>Here is the bio of the User</h2>
+<%= render 'shared/user_profile', user: @user %>
+
+<div class="user_profile">
+    <div class="user_bio">
+      <h3>Bio</h3>
+      <p class="bio">
+        <b><%= @user.bio %></b><br/><br/>
+        <%= @user.name %>, a passionate food enthusiast, has embarked on a lifelong journey of exploring the world of flavors and cuisines. 
+        His insatiable curiosity and love for all things culinary have led him on a delectable adventure through the vast and diverse realm of food. 
+        Born and raised in a small town, <%= @user.name %>'s fascination with food began at a tender age. 
+        In his family's cozy kitchen, he watched his grandmother whip up traditional recipes with love and skill. 
+        Those moments sparked a culinary fire within him that would never cease to burn.
+      </p>
+    </div>
+  <% User.recent_posts(@user).each do |post| %>
+    <div class="user_post">
+      <a href="/users/<%= post.author_id %>/posts/<%= post.id %>"><b><%= post.title %></b></a>
+      <p><%= post.text %></p>
+      <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+    </div>
+  <%end%>
+    <a href="/users/<%= @user.id %>/posts" class="button">See all posts</a>
+</div>

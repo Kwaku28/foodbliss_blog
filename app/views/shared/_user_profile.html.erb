@@ -1,0 +1,13 @@
+<div class="user_container">
+  <div class='user_photo'>
+    <% if user.photo.present? && user.photo.match(/.(jpg|jpeg|png|gif)$/i) %>
+      <%= image_tag(user.photo, alt: user.name) %>
+    <% else %>
+      <%= image_tag('default_user.png', alt: user.name) %>
+    <% end %>
+  </div>
+  <div class="user_card">
+    <a href="/users/<%= user.id %>" class="user_name"> <%= user.name %> </a>
+    <p class="posts_counter">Number of posts: <%= user.posts_counter %></p>
+  </div>
+</div>
