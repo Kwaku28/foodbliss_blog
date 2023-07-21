@@ -13,3 +13,132 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  width: 55%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.user_container {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+
+.user_card {
+  display: flex;
+
+  /* flex-direction: column; */
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  border: 1px solid #000;
+}
+
+.user_name {
+  align-self: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 2.5em;
+}
+
+.posts_counter {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+.user_profile,
+.user_comment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem 0;
+  gap: 0.5rem;
+}
+
+.user_bio {
+  border: 1px solid;
+  padding: 0 1rem;
+  width: fit-content;
+}
+
+.user_bio h3 {
+  font-size: 1.2em;
+}
+
+.bio b {
+  font-size: 1.5em;
+}
+
+.user_post {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  padding: 0 1rem;
+}
+
+.user_post span {
+  align-self: flex-end;
+}
+
+.button,
+button {
+  align-self: center;
+  text-decoration: none;
+  border: 2px solid #000;
+  padding: 1rem;
+  box-shadow: 0.5rem 0.5rem #000;
+  color: #000;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.button:active,
+button:active {
+  box-shadow: 0.3rem 0.3rem #000;
+  transform: translateY(8px);
+}
+
+.posts {
+  padding-bottom: 1.5rem;
+}
+
+.comments,
+.post {
+  border: 1px solid #000;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.comments li {
+  list-style: none;
+}
+
+.user_post a {
+  padding-top: 1rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5em;
+}
+
+.post_comment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_comment span {
+  align-self: center;
+}
