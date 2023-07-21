@@ -1,1 +1,7 @@
-<h1>Here is a list of all Users</h1>
+<h1>Welcome All Food Enthusiasts</h1>
+
+<% @users.each do |user| %>
+
+  <%= render 'shared/user_profile', user: user %>
+
+<% end %>
