@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'likes/create'
   # Defines the root path route ("/")
   # root "users#index"
   root 'users#index'
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
   get '/users/:id/posts/:post_id/comments/new', to: 'comments#new'
   post '/users/:id/posts/:post_id/comments/create', to: 'comments#create'
   post '/users/:id/posts/:post_id/likes', to: 'posts#likes', as: 'likes'
+  post '/users/:id/posts/:post_id/likes/create', to: 'likes#create'
 
 end
