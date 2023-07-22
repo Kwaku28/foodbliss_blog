@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def likes
     @post = Post.find(params[:id])
     Like.create(author_id: current_user.id, post_id: @post.id)
-    redirect_to post_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
