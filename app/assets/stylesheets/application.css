@@ -108,17 +108,17 @@ img {
   margin-bottom: 1rem;
 }
 
-button {
-  width: 20%;
-  align-self: center;
-  margin: auto;
+.button3 {
+  width: 10%;
+  align-self: flex-end;
+  margin: 0 1rem 1rem 0;
   box-shadow: 0.4rem 0.4rem #000;
   cursor: pointer;
 }
 
 .button:active,
 .button1:active,
-button:active {
+.button3:active {
   box-shadow: 0.3rem 0.3rem #000;
   transform: translateY(8px);
 }
