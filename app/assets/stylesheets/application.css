@@ -32,8 +32,6 @@ h1 {
 
 .user_card {
   display: flex;
-
-  /* flex-direction: column; */
   justify-content: space-between;
   width: 100%;
   padding: 0 1rem;
@@ -94,7 +92,7 @@ img {
 }
 
 .button,
-button {
+.button1 {
   align-self: center;
   text-decoration: none;
   border: 2px solid #000;
@@ -105,8 +103,22 @@ button {
   cursor: pointer;
 }
 
+.user_profile .button {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+
+.button3 {
+  width: 10%;
+  align-self: flex-end;
+  margin: 0 1rem 1rem 0;
+  box-shadow: 0.4rem 0.4rem #000;
+  cursor: pointer;
+}
+
 .button:active,
-button:active {
+.button1:active,
+.button3:active {
   box-shadow: 0.3rem 0.3rem #000;
   transform: translateY(8px);
 }
@@ -127,18 +139,26 @@ button:active {
   list-style: none;
 }
 
-.user_post a {
+.user_post a,
+.user_comment a {
   padding-top: 1rem;
   text-decoration: none;
   color: #000;
   font-size: 1.5em;
 }
 
-.post_comment {
+.post_comment,
+.btn {
   display: flex;
   justify-content: space-between;
 }
 
 .post_comment span {
   align-self: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
 }

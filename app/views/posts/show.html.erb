@@ -6,6 +6,10 @@
     </div>
     <p><%= @post.text %></p>
   </div>
+  <div class="btn">
+    <a href="/users/<%= @post.author_id%>/posts/<%= @post.id %>/comments/new" class="button">Add a comment</a>
+    <%= render 'shared/like', model: @like, url: likes_path(@post, :post_id) %>
+  </div>
   <ul class="comments">
     <% @post.comments.each do |comment|%>
       <li><b><%= comment.author.name %>:</b> <%= comment.text %></li><br/>
