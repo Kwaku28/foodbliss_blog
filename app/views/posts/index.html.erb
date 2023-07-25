@@ -10,7 +10,7 @@
         <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
       </div>
       <ul class="comments">
-        <% Post.recent_comments(post).each do |comment|%>
+        <% Post.recent_comments(post).includes([:author]).each do |comment|%>
           <li><b><%= comment.author.name %>:</b> <%= comment.text %></li><br/>
         <%end%>
       </ul>

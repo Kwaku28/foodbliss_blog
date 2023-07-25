@@ -11,7 +11,7 @@
     <%= render 'shared/like', model: @like, url: likes_path(@post, :post_id) %>
   </div>
   <ul class="comments">
-    <% @post.comments.each do |comment|%>
+    <% @post.comments.includes([:author]).each do |comment|%>
       <li><b><%= comment.author.name %>:</b> <%= comment.text %></li><br/>
     <%end%>
   </ul>
