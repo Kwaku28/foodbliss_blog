@@ -65,8 +65,8 @@ We were using Ruby on Rails to create it.
 - **Project 5: Controller specs.**
 - **Project 6: Views.**
 - **Project 7: Forms.**
-- **Project 8: Add Devise.**
-- **Project 9: Fix n+1 problems.**
+- **Project 8: Fix n+1 problems.**
+- **Project 9: Add Devise.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
