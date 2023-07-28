@@ -8,6 +8,11 @@
   </div>
   <div class="btn">
     <a href="/users/<%= @post.author_id%>/posts/<%= @post.id %>/comments/new" class="button">Add a comment</a>
+    <% if can? :destroy, @post %>
+      <%= form_with(model: @post, url: user_post_path(params[:user_id], @post), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'delete_post') do |form| %>
+        <%= form.submit "Delete Post" %>
+      <% end %>
+    <% end %>
     <%= render 'shared/like', model: @like, url: like_path(@post, :post_id) %>
   </div>
   <ul class="comments">
