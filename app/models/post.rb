@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: :post_id
 
   before_save :update_posts_counter
+  after_destroy :reset_posts_counter
 
   # The 3 most recent comments for a given post
   scope :recent_comments, ->(post) { post.comments.order(created_at: :desc).limit(5) }
@@ -19,5 +20,9 @@ class Post < ApplicationRecord
   # Updates the posts counter for a user
   def update_posts_counter
     User.find_by(id: author.id).increment!(:posts_counter)
+  end
+
+  def reset_posts_counter
+    User.find_by(id: author.id).decrement!(:posts_counter)
   end
 end
