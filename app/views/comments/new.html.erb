@@ -1,6 +1,6 @@
 <h2>Add a Comment</h2>
 
-<%= form_with model: @comment, url: "/users/id/posts/#{params[:post_id]}/comments/create" do |form| %>
+<%= form_with model: @comment, url: user_post_comments_path do |form| %>
   <%= form.label :text, 'Your comment' %>
   <%= form.text_field :text %>
   <br/>

@@ -119,7 +119,7 @@ img {
 .button:active,
 .button1:active,
 .button3:active {
-  box-shadow: 0.3rem 0.3rem #000;
+  box-shadow: 0.2rem 0.2rem #000;
   transform: translateY(8px);
 }
 
@@ -161,4 +161,40 @@ form {
   display: flex;
   flex-direction: column;
   width: 40%;
+}
+
+.join_in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.join_in form {
+  gap: 1rem;
+}
+
+.field input {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.actions {
+  margin-bottom: 1rem;
+}
+
+.actions input {
+  align-self: center;
+  border: 2px solid #000;
+  box-shadow: 0.3rem 0.3rem #000;
+  color: #000;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+}
+
+.actions input:active {
+  box-shadow: 0.1rem 0.1rem #000;
+  transform: translateY(1px);
 }

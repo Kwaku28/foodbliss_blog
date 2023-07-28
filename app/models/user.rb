@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  before_validation :set_default
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
   # Associations
   # A user has many posts
   # A user has many comments
@@ -12,4 +17,8 @@ class User < ApplicationRecord
 
   # The 3 most recent posts for a user
   scope :recent_posts, ->(user) { user.posts.order('created_at desc').limit(3) }
+
+  def set_default
+    self.posts_counter = 0
+  end
 end

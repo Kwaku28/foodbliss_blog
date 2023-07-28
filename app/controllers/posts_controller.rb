@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
   end
 
@@ -20,14 +20,14 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:success] = 'Post saved successfully'
-      redirect_to users_path
+      redirect_to user_posts_path
     else
       flash.now[:error] = 'Error: Post could not be saved'
       render :new
     end
   end
 
-  def likes
+  def like
     @post = Post.find(params[:id])
     Like.create(author_id: current_user.id, post_id: @post.id)
     redirect_back(fallback_location: root_path)
