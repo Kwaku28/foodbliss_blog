@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+         :recoverable, :rememberable, :validatable #:confirmable
   # Associations
   # A user has many posts
   # A user has many comments
@@ -20,5 +20,9 @@ class User < ApplicationRecord
 
   def set_default
     self.posts_counter = 0
+  end
+
+  def admin?
+    role == 'admin'
   end
 end
