@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
-  
+
   def new
     @comment = Comment.new
   end
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to user_post_path(params[:user_id], params[:post_id]), notice: 'Comment deleted successfully'
   end
-  
+
   private
 
   def comment_params
