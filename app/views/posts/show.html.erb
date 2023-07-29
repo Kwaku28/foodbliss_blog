@@ -8,11 +8,25 @@
   </div>
   <div class="btn">
     <a href="/users/<%= @post.author_id%>/posts/<%= @post.id %>/comments/new" class="button">Add a comment</a>
+    <% if can? :destroy, @post %>
+      <%= form_with(model: @post, url: user_post_path(params[:user_id], @post), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'delete_post') do |form| %>
+        <%= form.submit "Delete Post" %>
+      <% end %>
+    <% end %>
     <%= render 'shared/like', model: @like, url: like_path(@post, :post_id) %>
   </div>
   <ul class="comments">
-    <% @post.comments.includes([:author]).each do |comment|%>
-      <li><b><%= comment.author.name %>:</b> <%= comment.text %></li><br/>
-    <%end%>
+  <% @post.comments.includes([:author]).each do |comment|%>
+    <li>
+      <div class="comment_box">
+        <b><%= comment.author.name %>:</b> <%= comment.text %>
+        <% if can? :destroy, comment %>
+          <%= form_with(model: @comment, url: user_post_comment_path(params[:user_id], @post, comment), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'delete_comment') do |form| %>
+            <%= form.submit "Delete Comment" %>
+          <% end %>
+        <% end %>
+      </div>
+    </li><br/>
+  <%end%>
   </ul>
 </div>

@@ -92,7 +92,8 @@ img {
 }
 
 .button,
-.button1 {
+.button1,
+.delete_post input {
   align-self: center;
   text-decoration: none;
   border: 2px solid #000;
@@ -101,6 +102,7 @@ img {
   color: #000;
   font-size: 1.5em;
   cursor: pointer;
+  background: none;
 }
 
 .user_profile .button {
@@ -113,12 +115,41 @@ img {
   align-self: flex-end;
   margin: 0 1rem 1rem 0;
   box-shadow: 0.4rem 0.4rem #000;
+}
+
+.button3 input {
+  background: none;
   cursor: pointer;
+}
+
+.field input {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.actions input {
+  align-self: center;
+  border: 2px solid #000;
+  box-shadow: 0.3rem 0.3rem #000;
+  color: #000;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+}
+
+.delete_comment input {
+  background: none;
+  cursor: pointer;
+  box-shadow: 0.3rem 0.3rem #000;
 }
 
 .button:active,
 .button1:active,
-.button3:active {
+.button3:active,
+.delete_post input:active,
+.delete_comment input:active {
   box-shadow: 0.2rem 0.2rem #000;
   transform: translateY(8px);
 }
@@ -173,28 +204,32 @@ form {
   gap: 1rem;
 }
 
-.field input {
-  width: 100%;
-  border: 2px solid #000;
-}
-
 .actions {
   margin-bottom: 1rem;
-}
-
-.actions input {
-  align-self: center;
-  border: 2px solid #000;
-  box-shadow: 0.3rem 0.3rem #000;
-  color: #000;
-  font-size: 1.1em;
-  cursor: pointer;
-  background-color: transparent;
-  width: 100%;
-  text-align: center;
 }
 
 .actions input:active {
   box-shadow: 0.1rem 0.1rem #000;
   transform: translateY(1px);
+}
+
+.sign_out {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+}
+
+.delete_post {
+  align-self: center;
+  width: 20%;
+}
+
+.comment_box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.delete_comment {
+  max-width: 16%;
 }
